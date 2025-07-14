@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'custom_theme_data.dart';
+
+// Custom ThemeData extension for theme-specific colors
 
 final lightTheme = ThemeData(
   brightness: Brightness.light,
@@ -34,6 +37,12 @@ final lightTheme = ThemeData(
       foregroundColor: Color(0xFFFFFFFF),
     ),
   ),
+  extensions: const <ThemeExtension<dynamic>>[
+    CustomThemeData(
+      inactiveHomeCardGradientStart: Color(0xFFEFF6FF),
+      inactiveHomeCardGradientEnd: Color(0xFFFAF5FF),
+    ),
+  ],
 );
 
 final darkTheme = ThemeData(
@@ -71,4 +80,10 @@ final darkTheme = ThemeData(
       foregroundColor: Colors.white,
     ),
   ),
+  extensions: const <ThemeExtension<dynamic>>[
+    CustomThemeData(
+      inactiveHomeCardGradientStart: Color(0xFF100900),
+      inactiveHomeCardGradientEnd: Color(0xFF050A00),
+    ),
+  ],
 );

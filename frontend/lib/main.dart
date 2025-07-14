@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import 'views/main_view.dart';
 import 'viewmodels/main_view_model.dart';
-import 'models/theme.dart';
-import 'models/theme_provider.dart';
+import 'theme/theme.dart';
+import 'theme/theme_provider.dart';
 
 void main() {
   runApp(

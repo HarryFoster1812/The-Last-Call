@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:the_last_call/models/theme_provider.dart';
+import 'package:the_last_call/theme/theme_provider.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

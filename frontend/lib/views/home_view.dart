@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:the_last_call/models/theme_provider.dart';
-import 'package:the_last_call/views/main_view.dart';
+import 'package:the_last_call/theme/custom_theme_data.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final customColors = theme.extension<CustomThemeData>()!;
     return Scaffold(
       body: Column(
         children: <Widget>[
           Align(
             child: Container(
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Color(0xFFEFF6FF), // #EFF6FF
-                    Color(0xFFFAF5FF), // #FAF5FF
+                    customColors.inactiveHomeCardGradientStart,
+                    customColors.inactiveHomeCardGradientEnd,
                   ],
                 ),
                 boxShadow: [
