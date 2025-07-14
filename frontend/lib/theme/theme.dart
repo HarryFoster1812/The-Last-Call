@@ -4,6 +4,7 @@ import 'custom_theme_data.dart';
 // Custom ThemeData extension for theme-specific colors
 
 final lightTheme = ThemeData(
+  shadowColor: Colors.black,
   brightness: Brightness.light,
   scaffoldBackgroundColor: const Color(0xFFF5F7FA),
   colorScheme: const ColorScheme.light(
@@ -37,6 +38,17 @@ final lightTheme = ThemeData(
       foregroundColor: Color(0xFFFFFFFF),
     ),
   ),
+  cardTheme: CardThemeData(
+    color: Colors.white,
+    shape: RoundedRectangleBorder(
+      side: BorderSide(
+        color: Color(0xFFE4E4E4),
+        width: 2,
+        style: BorderStyle.solid,
+      ),
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+  ),
   extensions: const <ThemeExtension<dynamic>>[
     CustomThemeData(
       inactiveHomeCardGradientStart: Color(0xFFEFF6FF),
@@ -46,6 +58,7 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
+  shadowColor: Colors.white,
   brightness: Brightness.dark,
   scaffoldBackgroundColor: const Color(0xFF121212),
   colorScheme: const ColorScheme.dark(
@@ -78,6 +91,16 @@ final darkTheme = ThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: Color(0xFF26A69A),
       foregroundColor: Colors.white,
+    ),
+  ),
+  cardTheme: CardThemeData(
+    color: Colors.transparent,
+    shape: RoundedRectangleBorder(
+      side: BorderSide(
+        color: Color(0xFF444444), // Lighter gray for contrast in dark
+        width: 2,
+      ),
+      borderRadius: BorderRadius.circular(12),
     ),
   ),
   extensions: const <ThemeExtension<dynamic>>[
