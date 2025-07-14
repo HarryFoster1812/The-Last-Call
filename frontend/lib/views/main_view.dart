@@ -17,6 +17,34 @@ class MainView extends StatelessWidget {
     final viewModel = Provider.of<MainViewModel>(context);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Container(
+              height: 32,
+              width: 32,
+              decoration: BoxDecoration(
+                color: Color(0xFF6366F1),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+              ),
+              child: Icon(Icons.sports_bar, color: Colors.white),
+            ),
+            SizedBox(width: 15),
+            Text('The Last Call'),
+          ],
+        ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: NetworkImage('https://via.placeholder.com/40'),
+            ),
+          ),
+        ],
+        surfaceTintColor: Colors.white,
+        shadowColor: Colors.black,
+        elevation: 4,
+      ),
       body: PageView(
         controller: viewModel.pageController,
         onPageChanged: viewModel.onPageChanged,
