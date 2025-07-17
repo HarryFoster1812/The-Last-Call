@@ -1,0 +1,17 @@
+USER_LATITUDE
+USER_LONGITUDE
+SEARCH_RADIUS
+
+SELECT *,
+  ST_Distance(
+    geom::geography,
+    ST_SetSRID(ST_MakePoint(USER_LONGITUDE, USER_LATITUDE), 4326)::geography
+  ) AS distance_meters
+FROM "Venues"
+WHERE ST_DWithin(
+  geom::geography,
+  ST_SetSRID(ST_MakePoint(USER_LONGITUDE, USER_LATITUDE), 4326)::geography,
+
+  SEARCH_RADIUS
+)
+ORDER BY distance_meters ASC;
